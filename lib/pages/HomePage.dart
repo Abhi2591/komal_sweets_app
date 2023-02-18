@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
                     height: 200,
                     width: double.infinity,
                     color: Colors.yellow,
-                    child: Center(child: Text('Image will be here')),
+                    child: Center(child: Text('Image will be bUNNY')),
                   ),
                   Container(
                     width: double.infinity,
