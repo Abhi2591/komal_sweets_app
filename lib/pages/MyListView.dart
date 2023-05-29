@@ -2,14 +2,16 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 class MyListView extends StatefulWidget {
-  const MyListView({Key? key,}) : super(key: key);
-
+  var menuData;
+  MyListView(this.menuData);
+  
   @override
   State<MyListView> createState() => _MyListViewState();
 }
 
 class _MyListViewState extends State<MyListView> {
   var apiData;
+
   @override
   void initState() {
     super.initState();
@@ -18,12 +20,13 @@ class _MyListViewState extends State<MyListView> {
   Future<void> getData() async {
     var api = await Dio().get('https://fair-jade-tick-tux.cyclic.app/api/menu');
     setState(() {
-      apiData = api.data;
+      apiData = api.data.where((fil)=>fil['restaurant']==this.widget.menuData['_id']).toList();
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    print(this.widget.menuData['_id']);
     // print(apiData);
     return Scaffold(
       appBar: AppBar(

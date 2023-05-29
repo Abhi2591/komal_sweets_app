@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:komalstore/pages/AdminAllMenu.dart';
+import 'package:komalstore/pages/AdminAllUsers.dart';
 
 class AdminDashboard extends StatelessWidget {
   const AdminDashboard({Key? key}) : super(key: key);
@@ -52,23 +54,29 @@ class AdminDashboard extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.blueAccent.shade100,
-                  child: Center(
-                      child: Text('Users',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
+                child: InkWell(
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AdminAllUsers(),)),
+                  child: Container(
+                    height: 200,
+                    width: double.infinity,
+                    color: Colors.blueAccent.shade100,
+                    child: Center(
+                        child: Text('Users',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
+                    ),
                   ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.grey,
-                  child: Center(
-                      child: Text('Menu ',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
+                child: InkWell(
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AdminAllMenu(),)),
+                  child: Container(
+                    height: 200,
+                    width: double.infinity,
+                    color: Colors.grey,
+                    child: Center(
+                        child: Text('Menu ',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
+                    ),
                   ),
                 ),
               ),
@@ -85,12 +93,15 @@ class AdminDashboard extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 200,
-                  width: double.infinity,
-                  color: Colors.redAccent.shade100,
-                  child: Center(
-                      child: Text('Restaurant',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
+                child: InkWell(
+                  onTap: () => Navigator.pushNamed(context, '/allrestaurants'),
+                  child: Container(
+                    height: 200,
+                    width: double.infinity,
+                    color: Colors.redAccent.shade100,
+                    child: Center(
+                        child: Text('Restaurant',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),)
+                    ),
                   ),
                 ),
               ),

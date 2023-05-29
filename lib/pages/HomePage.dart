@@ -68,14 +68,13 @@ class _HomePageState extends State<HomePage> {
         ListView.builder(itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.all(8.0),
           child: InkWell(
-            onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context) => MyListView(),))},
+            onTap: ()=>{Navigator.push(context, MaterialPageRoute(builder: (context) => MyListView(apiData[index]),))},
             child: Column(
               children: [
                 Container(
                   height: 200,
                   width: double.infinity,
                   color: Colors.green,
-
                   child: Image.network('https://fair-jade-tick-tux.cyclic.app${apiData[index]['image']}',fit: BoxFit.fill,),
                 ),
                 Container(

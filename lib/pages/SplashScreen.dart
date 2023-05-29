@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   openNextPage() {
-    Timer.periodic(Duration(seconds: 3), (timer) async {
+    Timer.periodic(const Duration(seconds: 3), (timer) async {
       var inst = await SharedPreferences.getInstance();
       var userLogin = await inst.getBool('isLogin');
       if (userLogin == null || userLogin == false || userLogin == 'undefined') {
@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
           height: double.infinity,
           width: double.infinity,
           color: Colors.black,
-          child: Center(
+          child: const Center(
             child: Text('Komal Sweets', style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 30,

@@ -30,16 +30,17 @@ class _RegisterPageState extends State<RegisterPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 30,),
-                Text('Register',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-                SizedBox(height: 20,),
-                Text('Register yourself to shop with us',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
-                SizedBox(height: 20,),
+                const SizedBox(height: 30,),
+                const Text('Register',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+                const SizedBox(height: 20,),
+                const Text('Register yourself to shop with us',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
+                const SizedBox(height: 20,),
+                /// First Name :
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: TextField(
                     autofocus: true,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                         labelText: 'First Name',
                         hintText: 'First Name',
                         hintStyle: TextStyle(color: Colors.black),
@@ -48,11 +49,12 @@ class _RegisterPageState extends State<RegisterPage> {
                     controller: firstNameController,
                   ),
                 ),
+                /// Last Name :
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: TextField(
                     autofocus: true,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Last Name',
                       hintText: 'Last Name',
                       hintStyle: TextStyle(color: Colors.black),
@@ -61,11 +63,12 @@ class _RegisterPageState extends State<RegisterPage> {
                     controller: lastNameController,
                   ),
                 ),
+                /// Mobile Number :
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: TextField(
                     autofocus: true,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Mobile Number',
                       hintText: 'Mobile Number',
                       hintStyle: TextStyle(color: Colors.black),
@@ -75,11 +78,12 @@ class _RegisterPageState extends State<RegisterPage> {
                     controller: mobileController,
                   ),
                 ),
+                /// Email ID :
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: TextField(
                     autofocus: true,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Email Id',
                       hintText: 'Email Id',
                       hintStyle: TextStyle(color: Colors.black),
@@ -89,11 +93,12 @@ class _RegisterPageState extends State<RegisterPage> {
 
                   ),
                 ),
+                /// Gender :
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: TextField(
                     autofocus: true,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Gender',
                       hintText: 'Gender',
                       hintStyle: TextStyle(color: Colors.black),
@@ -102,11 +107,12 @@ class _RegisterPageState extends State<RegisterPage> {
                     controller: genderController,
                   ),
                 ),
+                /// Password :
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: TextField(
                     autofocus: true,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Password',
                       hintText: 'Password',
                       hintStyle: TextStyle(color: Colors.black),
@@ -116,13 +122,16 @@ class _RegisterPageState extends State<RegisterPage> {
                     obscureText: true,
                   ),
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
+                /// Register Button :
                 Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(onPressed: () async {
-                        var res = await Dio().post('https://fair-jade-tick-tux.cyclic.app/api/registeruser',options: Options(
+                        var res = await Dio().post(
+                            'https://fair-jade-tick-tux.cyclic.app/api/registeruser',
+                            options: Options(
                           headers: {
                             HttpHeaders.contentTypeHeader:'application/json'
                           }
@@ -143,16 +152,19 @@ class _RegisterPageState extends State<RegisterPage> {
                           return;
                         }
                         
-                    }, child: Text('Register')),
+                    },
+                        child: const Text('Register')),
                   ),
                 ),
+
+                /// Sign In Text :
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Already a customer?',style: TextStyle(fontSize: 20,),),
+                    const Text('Already a customer?',style: TextStyle(fontSize: 20,),),
                     InkWell(
                       onTap: () => Navigator.pushNamed(context, '/logincustomer'),
-                        child: Text('Sign In',style: TextStyle(color: Colors.blue,fontSize: 20),)
+                        child: const Text('Sign In',style: TextStyle(color: Colors.blue,fontSize: 20),)
                     )
                   ],
                 ),
